@@ -1,0 +1,8 @@
+#Ignoring node modules
+node_modules
+#Ignoring Extra Files in folder Z
+Z
+#Ignoring hidden data
+.env
+#Ingnoring hiddent mac files
+.DS_Store
