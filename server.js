@@ -1,4 +1,7 @@
+require("dotenv").config();
+
 const express = require("express");
+const bodyParser = require("body-parser");
 //Set up express app
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -10,8 +13,8 @@ const db = require("./models");
 app.use(express.static("public"));
 
 // Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
