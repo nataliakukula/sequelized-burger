@@ -19,3 +19,5 @@ module.exports = {
     "dialect": "mysql"
   }
 }
+
+console.log(process.env.DB_HOST);
