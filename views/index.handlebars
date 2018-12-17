@@ -16,13 +16,15 @@
         <ul>
             {{#each burger}}
             {{#unless devoured}}
-            <p class="burgerito">
-                <img src="/assets/img/burgerito.png" alt="Burgerito">
-                {{id}}. {{burger_name}}
-                <button type="button" class="devoure btn btn-outline-dark" data-id="{{id}}">Devoure
-                    it!</button>
-            </p>
+            <form id="customers">
+                <div class="burgerito form-inline text-center">
+                    <img src="/assets/img/burgerito.png" alt="Burgerito">
+                    {{id}}. {{burger_name}}
 
+                    <input type="text" class="form-control" id="customer" placeholder="Who will devoure me?">
+                    <button type="submit" class="devoure btn btn-outline-dark" data-id="{{id}}">Devoure it!</button>
+                </div>
+            </form>
             {{/unless}}
             {{/each}}
         </ul>
@@ -35,7 +37,7 @@
             <p class="burgeritoed">
                 <img src="/assets/img/wallpaper.png" alt="Burgerito">
                 {{id}}. {{burger_name}}
-                <button type="submit" class="btn btn-outline-dark-block">Devoured!!!</button>
+                <button type="submit" class="btn btn-outline-dark-block"> {{Customer.customer_name}} devoured it!!!</button>
             </p>
             {{/if}}
             {{/each}}

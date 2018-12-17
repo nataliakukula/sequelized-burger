@@ -23,6 +23,12 @@ h1 {
     height: 80px;
     background-color: #b4f1f6;
     text-transform: uppercase;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+#customer {
+margin: 5px;
 }
 
 .burgeritoed{

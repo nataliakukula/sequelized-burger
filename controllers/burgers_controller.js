@@ -1,13 +1,19 @@
 const express = require("express");
-const router = express.Router();
+const burgerRouter = express.Router();
 
 // Imported model to use its sequelized functions:
 const db = require("../models");
 
-//Show all burgers
-router.get("/", function (req, res) {
+//Show all burgers and their associated customers
+burgerRouter.get("/", function (req, res) {
 
-    db.Burger.findAll({}).then(function (data) {
+    db.Burger.findAll({
+        // Order results by name of burger
+        order: [['burger_name', 'ASC']],
+        //JOIN with Customer table
+        include: [db.Customer]
+
+    }).then(function (data) {
 
         let hbsObject = {
             burger: data
@@ -18,8 +24,8 @@ router.get("/", function (req, res) {
     });
 });
 
-//Create burger - place burger on one side
-router.post("/api/burger", function (req, res) {
+//Create burger
+burgerRouter.post("/api/burger", function (req, res) {
 
     let newBurger = {
         burger_name: req.body.name,
@@ -36,7 +42,7 @@ router.post("/api/burger", function (req, res) {
 });
 
 //Update burger - move to the other side
-router.put("/api/burger/:id", function (req, res) {
+burgerRouter.put("/api/burger/:id", function (req, res) {
 
     let status = Boolean(req.body.devoured);
 
@@ -59,4 +65,4 @@ router.put("/api/burger/:id", function (req, res) {
 
 });
 
-module.exports = router;
+module.exports = burgerRouter;

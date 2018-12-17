@@ -22,14 +22,16 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-const routes = require("./controllers/burgers_controller");
+// Import burgerRoutes and customerRoutes give the server access to them.
+const burgerRoutes = require("./controllers/burgers_controller");
+const customerRoutes = require("./controllers/customers_controller");
 
-app.use(routes);
+app.use(burgerRoutes);
+app.use(customerRoutes);
 
 //// Syncing sequelize models and then starting our Express app
 //For testing change force to false!
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on http://localhost:" + PORT);
     });
