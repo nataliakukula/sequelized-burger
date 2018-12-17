@@ -1,4 +1,4 @@
-# Pusheen Sequlelized Burger Logger
+# Pusheen Sequlelized Burger Logger   😽
 
 Created for: Northwestern Coding Bootcamp \
 Deployment Date:  December 17, 2018 \
@@ -28,5 +28,8 @@ This full stack JavaScript application is set up in the Model-Visual-Controller 
 
 ## Copyright:
 
-Natalia Kukula - 2018
-Pusheen Burger Log (https://github.com/nataliakukula/burger) updated with Sequelize!
+Natalia Kukula - 2018 
+
+&nbsp;
+
+Check out the original code with a homemade MySQL ORM https://github.com/nataliakukula/burger!
