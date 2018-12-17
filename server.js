@@ -30,7 +30,7 @@ app.use(burgerRoutes);
 app.use(customerRoutes);
 
 //// Syncing sequelize models and then starting our Express app
-//For testing change force to false!
+//When testing change force to false!
 db.sequelize.sync({ force: true }).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on http://localhost:" + PORT);
